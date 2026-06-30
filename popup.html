@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    :root {
+      --bg-dark: #12131a;
+      --bg-card: #1a1c24;
+      --accent-blue: #3b82f6;
+      --accent-blue-hover: #2563eb;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+    }
+
+    body {
+      width: 320px;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #2d313e;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent-blue);
+      letter-spacing: 1px;
+    }
+
+    .status {
+      font-size: 12px;
+      background: rgba(59, 130, 246, 0.1);
+      padding: 4px 8px;
+      border-radius: 12px;
+      color: var(--accent-blue);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .tab-btn {
+      background-color: var(--bg-card);
+      border: 1px solid #2d313e;
+      color: var(--text-muted);
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--accent-blue);
+      color: var(--text-main);
+    }
+
+    .tab-btn.active {
+      background-color: var(--accent-blue);
+      color: #ffffff;
+      border-color: var(--accent-blue);
+    }
+
+    .display-panel {
+      background-color: var(--bg-card);
+      border-radius: 12px;
+      padding: 16px;
+      min-height: 140px;
+      border: 1px solid #2d313e;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .result-val {
+      font-size: 24px;
+      font-weight: 800;
+      margin-top: 8px;
+      color: #ffffff;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">RIFT</div>
+    <div class="status">Connected</div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" id="btn-mines">Mines</button>
+    <button class="tab-btn" id="btn-blackjack">Blackjack</button>
+    <button class="tab-btn" id="btn-towers">Towers</button>
+    <button class="tab-btn" id="btn-slide">Slide</button>
+  </div>
+
+  <div class="display-panel" id="display-panel">
+    <div style="color: var(--text-muted);">Mode Action</div>
+    <div class="result-val" id="output-text">Select a mode or trigger overlay</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
