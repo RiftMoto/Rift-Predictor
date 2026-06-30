@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Rift Predictor",
+  "version": "1.0",
+  "description": "Sleek UI simulator for educational and interface layout demonstration.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.bloxflip.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.bloxflip.com/*"],
+      "css": ["overlay.css"],
+      "js": ["content.js"]
+    }
+  ]
+}
